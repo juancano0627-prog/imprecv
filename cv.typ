@@ -92,7 +92,7 @@
         if ("phone" in info.personal and info.personal.phone != none) and uservars.showNumber {box(link("tel:" + info.personal.phone))} else {none},
         if ("url" in info.personal) and (info.personal.url != none) {
             box(link(info.personal.url)[#info.personal.url.split("//").at(1)])
-        }
+        } else {none}
     ).filter(it => it != none) // Filter out none elements from the profile array
 
     #if ("profiles" in info.personal) and (info.personal.profiles.len() > 0) {
